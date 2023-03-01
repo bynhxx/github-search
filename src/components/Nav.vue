@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '@/assets/sass/main.scss';
+
 
 nav{
     display: flex;
@@ -27,6 +27,8 @@ nav{
     align-items: center;
     background-color: $light-gray;
     padding: 12px;
+    position: fixed;
+    width: 100%;
 
     div{
         font-family: 'Rubik', sans-serif;

@@ -12,7 +12,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/sass/main.scss';
 
 div{
     display: flex;

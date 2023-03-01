@@ -19,14 +19,6 @@ export default {
 
 
 <style lang="scss">
-  @import '@/assets/sass/main.scss';
-
-* { 
-  margin: 0; 
-  box-sizing: border-box; 
-  padding: 0; 
-}
-
 
 
 </style>
