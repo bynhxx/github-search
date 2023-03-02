@@ -3,7 +3,18 @@
     <img src="@/assets/icons/octocat.svg" alt="">
 
     <div class="button-group">
-      <Button content="Repositório"/> <Button content="usuário"/>
+<!-- 
+      <Button :class="{active: typeOfSearch === 'repo'}" isActive="false" @click="searchForRepos" content="Repositório" /> 
+
+
+      <Button :class="{active: typeOfSearch === 'user'}" isActive="false" @click="searchForUsers" content="Usuário" />
+ -->
+
+      <Button :state="{active: typeOfSearch === 'repo'}" @click="searchForRepos" content="Repositório" /> 
+
+
+      <Button :state="{active: typeOfSearch === 'user'}" @click="searchForUsers" content="Usuário" />
+
     </div>
     <Input />
     
@@ -20,16 +31,24 @@ import Input from '@/components/Input.vue'
 export default {
   name: 'HomeView',
   components: {
-    Button, Input
+    Button, 
+    Input
   },
   data(){
-    
+    return {
+      typeOfSearch: 'repo'
+    }
   },
-  computed: {
-
-  }, 
-  
-
+  methods: {
+    searchForRepos(){
+      this.typeOfSearch = 'repo'
+      console.log(this.typeOfSearch)      
+    },
+    searchForUsers(){
+      this.typeOfSearch = 'user'
+      console.log(this.typeOfSearch)
+    }
+  }
 }
 
 </script>
@@ -48,8 +67,13 @@ export default {
     width: 200px;
   }
 
+  .button-group{
+    display: flex; 
+    gap: 8px
+  }
+
 }
 
 
-
 </style>
+

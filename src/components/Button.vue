@@ -1,5 +1,10 @@
 <template>
-    <button class="outlined">{{content}}</button>
+    <button 
+        :class="{active: state.active === true}"
+        class="outlined">
+        {{content}}
+    </button>
+
 </template>
 
 <script>
@@ -9,10 +14,10 @@ export default {
             type: String, 
             default: 'Button'
         }, 
-        style: {
-            type: String  /* receberá outlined ou filled, alterar a classe dinamicamente de acordo com o valor da prop */
-        }
-    }
+        state: {
+            type: Object
+        }, 
+    }, 
 }
 </script>
 
@@ -23,17 +28,17 @@ export default {
         border-radius: 4px;
         margin-top: 16px;
         cursor: pointer;
-    }
-
-    .filled{
-        background-color: $black; 
-        color: $white; 
-        
+        transition: .2s;
     }
 
     .outlined{
         border: 2px solid $black; 
         background-color: $white;
+    }
+
+    .active {
+        background-color: $black;
+        color: $white;
     }
 
 </style>
