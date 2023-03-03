@@ -3,7 +3,7 @@
         <Logo/>
         <div>
             <router-link to="/">Início</router-link> |
-            <router-link to="/about">Favoritos</router-link>
+            <router-link to="/favorite">Favoritos</router-link>
         </div>
     </nav>
 </template>
