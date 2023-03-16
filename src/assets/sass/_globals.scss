@@ -1,0 +1,15 @@
+.primaryButton{
+        padding: 6px 16px;
+        border-radius: 4px;
+        margin-top: 16px;
+        cursor: pointer;
+        transition: .2s;
+        border: 2px solid $black; 
+        background-color: $white;
+
+        &:hover{
+                background-color: $black; 
+                color: $white;
+        }
+
+}

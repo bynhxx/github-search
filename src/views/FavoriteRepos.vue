@@ -1,14 +1,39 @@
 <template>
-    <h2>repositorios favoritos</h2>
-    <h2>repositorios favoritos</h2><h2>repositorios favoritos</h2><h2>repositorios favoritos</h2><h2>repositorios favoritos</h2><h2>repositorios favoritos</h2>
+    <div class="container">
+    <PageTitle />
+    <Repository/>
+    <Repository/>
+    <Repository/>
+    
+
+    <button class="primaryButton">Ver Mais</button>
+    </div>
 </template>
 
 <script>
+import PageTitle from '@/components/PageTitle.vue'
+import Repository from '@/components/Repository.vue'
+
 export default {
-    name: 'FavoriteRepos'
+    name: 'FavoriteRepos',
+    components: {
+        PageTitle, 
+        Repository
+    }
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+        //background-color: red;
 
-</style>
+        button{
+            align-self: center;
+            margin-bottom: 30px;
+        }
+    }
+
+</style>  

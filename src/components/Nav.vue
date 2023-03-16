@@ -29,7 +29,9 @@ nav{
     padding: 12px;
     position: fixed;
     width: 100%;
-
+    z-index: 3;
+    top: 0;
+    
     div{
         font-family: 'Rubik', sans-serif;
         
@@ -40,7 +42,16 @@ nav{
             font-size: 0.8rem;
             letter-spacing: 1px;
             color: $black; 
+            transition: .1s;
+        }
+
+        .router-link-active{
+            background-color: red;
+            padding: 4px 8px; 
+            border-radius: 4px;
         }
     }
+
+    
 }
 </style>

@@ -1,10 +1,12 @@
 <template>
-  <h2>Users View</h2>
-    <h2>Users View</h2>
-  <h2>Users View</h2>
-  <h2>Users View</h2>
-  <h2>Users View</h2>
-  <UserItem />
+  <router-view></router-view>
+  <div class='users-container'>
+    <UserItem />
+    <user-item> </user-item>
+    <button class="primaryButton">teste</button>
+  </div>  
+
+      
 
 </template>
 
@@ -13,14 +15,25 @@
 import UserItem from '@/components/UserItem.vue'
 
 
+
 export default {
   components: { 
-    UserItem 
-    },
-
+    UserItem, 
+    }
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+
+  .users-container{
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+  }
+
+  button{
+    align-self: center;
+    margin-top: 200px;
+  }
 
 </style>T
