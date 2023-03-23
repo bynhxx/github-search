@@ -27,9 +27,12 @@ nav{
     align-items: center;
     padding: 12px;
     position: fixed;
-    width: 100%;
-    z-index: 1;
+    //width: 100%;
+    width: calc(100% - 12px);
+    z-index: 3;
     top: 0;
+
+
 
     @include glass-effect;
     

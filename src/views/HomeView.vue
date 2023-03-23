@@ -7,7 +7,9 @@
       <Button :state="{active: typeOfSearch === 'repo'}" @click="searchForRepos" content="Repositório" /> 
       <Button :state="{active: typeOfSearch === 'user'}" @click="searchForUsers" content="Usuário" />
     </div>
-    <Input :placeholder="inputPlaceholder"/>
+    
+    <input v-model="searchTo" type="text" name="" id="" placeholder="Buscar">
+    {{ searchTo }}
   </div>
 </template>
 
@@ -27,7 +29,8 @@ export default {
   data(){
     return {
       typeOfSearch: "Buscar", 
-      isModalVisible: false 
+      isModalVisible: false, 
+      searchTo: null
     }
   },
   methods: {
@@ -38,6 +41,12 @@ export default {
     searchForUsers(){
       this.typeOfSearch = 'user'
       console.log(this.typeOfSearch)
+      if(this.searchTo){
+        console.log(this.searchTo) 
+        this.$router.push(`/users/${this.searchTo}`)
+      }
+
+
     }, 
     toggleModalVisibility(){
       this.isModalVisible = !this.isModalVisible
@@ -53,6 +62,7 @@ export default {
 
 <style lang="scss" scoped>
 
+
 .container {
   width: 100%;
   height: 100vh;
@@ -60,6 +70,7 @@ export default {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  z-index: 2;
   
 
   img{
@@ -70,6 +81,11 @@ export default {
     display: flex; 
     gap: 8px
   }
+
+  input{
+    @include input()
+  }
+
 }
 </style>
 

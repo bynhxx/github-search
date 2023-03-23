@@ -1,8 +1,8 @@
 <template>
     <div>
-        <UserPicture />
+        <UserPicture :url="avatarURL" />
         <span> </span>  
-        Fulano De Talzin
+        {{name}}
 
     </div>
     
@@ -13,6 +13,7 @@ import UserPicture from './UserPicture.vue'
 
 export default {
     name: 'UserItem', 
+    props: ['name', 'avatarURL'],
     components: {
         UserPicture
     }
