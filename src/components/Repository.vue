@@ -26,10 +26,13 @@ export default {
 <style lang="scss" scoped>
 
     .repo {
-        width: 98%;
+        width: 90%;
+        max-width: 1200px;
         padding: 20px;
         align-self: center;
-        margin-top: 8px;
+        margin-bottom: 20px;
+        background-color: rgba(255, 255, 255, 0.842);
+        border-radius: 4px;
 
         .repo-title{
             display: flex;

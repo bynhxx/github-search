@@ -1,25 +1,13 @@
-<template>
+<template> 
+  <ErrorModal v-if="isModalVisible" @toggleModal="toggleModalVisibility"/>
+
   <div class="container">
     <img src="@/assets/icons/octocat.svg" alt="">
-
     <div class="button-group">
-<!-- 
-      <Button :class="{active: typeOfSearch === 'repo'}" isActive="false" @click="searchForRepos" content="Repositório" /> 
-
-
-      <Button :class="{active: typeOfSearch === 'user'}" isActive="false" @click="searchForUsers" content="Usuário" />
- -->
-
       <Button :state="{active: typeOfSearch === 'repo'}" @click="searchForRepos" content="Repositório" /> 
-
-
       <Button :state="{active: typeOfSearch === 'user'}" @click="searchForUsers" content="Usuário" />
-
     </div>
-    <Input />
-    
-
-    
+    <Input :placeholder="inputPlaceholder"/>
   </div>
 </template>
 
@@ -27,16 +15,19 @@
 // @ is an alias to /src
 import Button from '@/components/Button.vue'
 import Input from '@/components/Input.vue'
+import ErrorModal from '@/components/ErrorModal.vue'
 
 export default {
   name: 'HomeView',
   components: {
     Button, 
-    Input
+    Input,
+    ErrorModal
   },
   data(){
     return {
-      typeOfSearch: 'repo'
+      typeOfSearch: "Buscar", 
+      isModalVisible: false 
     }
   },
   methods: {
@@ -47,10 +38,17 @@ export default {
     searchForUsers(){
       this.typeOfSearch = 'user'
       console.log(this.typeOfSearch)
+    }, 
+    toggleModalVisibility(){
+      this.isModalVisible = !this.isModalVisible
     }
-  }
+  }, 
+  computed: {
+    inputPlaceholder(){
+      return this.typeOfSearch === "repo" ? "Buscar repositório" : "Buscar usuário"
+    } 
+  }, 
 }
-
 </script>
 
 <style lang="scss" scoped>
@@ -71,9 +69,6 @@ export default {
     display: flex; 
     gap: 8px
   }
-
 }
-
-
 </style>
 

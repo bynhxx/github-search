@@ -24,7 +24,7 @@ export default {
         Repository,
         UserPicture
     }
-    }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -33,18 +33,27 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
+        
     }
     .user{
-        padding: 100px 60px;
-        width: 90%;
+        padding: 100px 40px;
+        width: 100%;
+        max-width: 1200px;
+        height: 100vh;
         display: grid;
         grid-template-columns: 1fr 3fr ;
+        gap: 20px;
 
         
         &--profile{
-            background-color: $light-gray;
+            @include glass-effect;
             max-height: 600px;
+            max-width: 220px;
             border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px
         }
     
     }

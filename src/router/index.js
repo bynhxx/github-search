@@ -3,6 +3,8 @@ import HomeView from '../views/HomeView.vue'
 import FavoriteRepos from '../views/FavoriteRepos.vue'
 import UsersView from '../views/UsersView.vue'
 import TheUserView from '../views/TheUserView.vue'
+import NotFound from '../views/NotFound.vue'
+import ReposView from '../views/ReposView.vue'
 
 const routes = [
   {
@@ -16,17 +18,27 @@ const routes = [
     component: FavoriteRepos
   },
   {
-    path: '/users',
+    path: '/users/:name',
     name: 'users',
     component: UsersView, 
   },
   {
-    path: '/users/theuser',
+    path: '/user/theuser',
     name: 'user',
     component: TheUserView, 
-  }
-  
+  },
 
+  {
+    path: '/repos/:reponame',
+    name: 'repos',
+    component: ReposView, 
+  },
+
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    component: NotFound, 
+  },
 ]
 
 const router = createRouter({

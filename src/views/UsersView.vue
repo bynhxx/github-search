@@ -13,13 +13,14 @@
 <script>
 
 import UserItem from '@/components/UserItem.vue'
-
+name: "UsersView"
 
 
 export default {
   components: { 
     UserItem, 
-    }
+    }, 
+
 }
 </script>
 
@@ -29,6 +30,8 @@ export default {
     display: flex;
     flex-direction: column;
     padding-top: 80px;
+    height: 100vh;
+    
   }
 
   button{
@@ -36,4 +39,4 @@ export default {
     margin-top: 200px;
   }
 
-</style>T
+</style>

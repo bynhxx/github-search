@@ -1,12 +1,8 @@
 <template>
     <div class="container">
-    <PageTitle />
-    <Repository/>
-    <Repository/>
-    <Repository/>
-    
-
-    <button class="primaryButton">Ver Mais</button>
+        <Repository/>
+        <Repository/>
+        <button class="primaryButton">Ver Mais</button>
     </div>
 </template>
 
@@ -28,6 +24,8 @@ export default {
     .container {
         display: flex;
         flex-direction: column;
+        height: 100vh;
+        padding: 80px 20px;
         //background-color: red;
 
         button{

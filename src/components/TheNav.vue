@@ -2,7 +2,7 @@
     <nav>
         <Logo/>
         <div>
-            <router-link to="/">Início</router-link> |
+            <router-link to="/">Início</router-link>
             <router-link to="/favorite">Favoritos</router-link>
         </div>
     </nav>
@@ -11,7 +11,7 @@
 <script>
 import Logo from '@/components/Logo.vue'; 
 export default {
-    name: 'Nav', 
+    name: 'TheNav', 
     components: {
         Logo
     }
@@ -25,15 +25,17 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: $light-gray;
     padding: 12px;
     position: fixed;
     width: 100%;
-    z-index: 3;
+    z-index: 1;
     top: 0;
+
+    @include glass-effect;
     
     div{
         font-family: 'Rubik', sans-serif;
+        color: white;
         
         a{
             text-decoration: none;
@@ -41,13 +43,15 @@ nav{
             text-transform: uppercase;
             font-size: 0.8rem;
             letter-spacing: 1px;
-            color: $black; 
-            transition: .1s;
+            color: white; 
+            transition: .2s;
+            background-color: transparent;
+            padding: 4px 8px; 
         }
 
         .router-link-active{
-            background-color: red;
-            padding: 4px 8px; 
+            background-color: white;
+            color: black;
             border-radius: 4px;
         }
     }
