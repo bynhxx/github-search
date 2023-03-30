@@ -1,9 +1,7 @@
 <template>
-    <div>
+    <div @click="navigateToUser" >
         <UserPicture :url="avatarURL" />
-        <span> </span>  
-        {{name}}
-
+        <span> {{name}} </span>  
     </div>
     
 </template>
@@ -16,6 +14,12 @@ export default {
     props: ['name', 'avatarURL'],
     components: {
         UserPicture
+    }, 
+    methods: {
+        navigateToUser(){
+            console.log(this.name)
+            this.$router.push(`/user/${this.name}`)
+        }
     }
 
 }

@@ -23,7 +23,7 @@ const routes = [
     component: UsersView, 
   },
   {
-    path: '/user/theuser',
+    path: '/user/:user',
     name: 'user',
     component: TheUserView, 
   },
