@@ -1,4 +1,4 @@
-# lux-ti
+# github search
 
 ## Project setup
 ```
